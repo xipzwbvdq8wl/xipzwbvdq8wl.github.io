@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>黄果短剧下载-短剧资源下载_黄果短剧全集缓存与离线观看</title>
+<meta name="description" content="黄果短剧下载页面，集中说明短剧资源获取、整季缓存与离线观看的常见路径，帮助你在手机端找到想看的热门短剧，并了解下载前的存储与清晰度准备。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23ff7a18'/%3E%3Cpath d='M24 20l22 12-22 12z' fill='%23fff'/%3E%3C/svg%3E">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+--orange:#ff7a18;
+--orange-deep:#e85d04;
+--ink:#1d1d24;
+--ink-soft:#4a4a58;
+--muted:#7c7c8c;
+--line:#ececf2;
+--bg:#fffaf5;
+--card:#ffffff;
+--peach:#fff1e4;
+}
+body{
+font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",system-ui,sans-serif;
+color:var(--ink);
+background:var(--bg);
+line-height:1.75;
+-webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+/* header */
+header{
+position:sticky;top:0;z-index:50;
+background:rgba(255,250,245,.92);
+backdrop-filter:blur(10px);
+border-bottom:1px solid var(--line);
+}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:18px;height:68px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:18px;letter-spacing:.3px;color:var(--ink)}
+.logo svg{flex:0 0 auto}
+nav ul{display:flex;gap:26px;list-style:none;font-size:15px;color:var(--ink-soft)}
+nav a{padding:6px 0;border-bottom:2px solid transparent;transition:.2s}
+nav a:hover{color:var(--orange-deep);border-color:var(--orange)}
+.nav-cta{
+display:inline-flex;align-items:center;gap:6px;
+background:linear-gradient(135deg,var(--orange),var(--orange-deep));
+color:#fff;font-size:14px;font-weight:600;
+padding:9px 18px;border-radius:999px;
+box-shadow:0 6px 16px rgba(255,122,24,.3);
+}
+/* hero */
+.hero{padding:56px 0 44px;position:relative;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center}
+.tag{
+display:inline-block;background:var(--peach);color:var(--orange-deep);
+font-size:13px;font-weight:600;padding:5px 14px;border-radius:999px;margin-bottom:18px;
+}
+h1{font-size:clamp(28px,4.2vw,44px);line-height:1.25;font-weight:800;letter-spacing:.5px}
+.hero p.lead{margin-top:18px;font-size:16px;color:var(--ink-soft);max-width:34em}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:26px;align-items:center}
+.btn-main{
+display:inline-flex;align-items:center;gap:8px;
+background:linear-gradient(135deg,var(--orange),var(--orange-deep));
+color:#fff;font-weight:700;font-size:16px;
+padding:14px 28px;border-radius:14px;
+box-shadow:0 10px 24px rgba(255,122,24,.32);
+pointer-events:none;
+}
+.btn-ghost{
+display:inline-flex;align-items:center;gap:8px;
+border:1.5px solid var(--line);background:#fff;
+color:var(--ink);font-weight:600;font-size:15px;
+padding:13px 24px;border-radius:14px;
+}
+.btn-ghost:hover{border-color:var(--orange);color:var(--orange-deep)}
+.hero-note{font-size:13px;color:var(--muted);margin-top:14px}
+.hero-visual{
+background:linear-gradient(160deg,#fff4e8,#ffe3cc);
+border-radius:26px;padding:26px;position:relative;
+box-shadow:inset 0 0 0 1px rgba(255,122,24,.12);
+}
+.phone{
+background:#1d1d24;border-radius:26px;padding:10px;
+box-shadow:0 22px 44px rgba(29,29,36,.24);
+}
+.phone-screen{
+background:linear-gradient(170deg,#2a2233,#171520);
+border-radius:18px;padding:20px 16px;color:#fff;
+min-height:250px;display:flex;flex-direction:column;gap:12px;
+}
+.ps-title{font-size:13px;color:#ffb27a;font-weight:700;letter-spacing:1px}
+.ps-card{display:flex;gap:10px;align-items:center;background:rgba(255,255,255,.07);border-radius:12px;padding:10px}
+.ps-thumb{width:42px;height:52px;border-radius:8px;flex:0 0 auto;background:linear-gradient(150deg,#ff9a4d,#e85d04);display:flex;align-items:center;justify-content:center}
+.ps-thumb svg{opacity:.9}
+.ps-thumb.alt{background:linear-gradient(150deg,#8b5cf6,#4c1d95)}
+.ps-thumb.alt2{background:linear-gradient(150deg,#f472b6,#be123c)}
+.ps-lines{flex:1}
+.ps-lines i{display:block;height:7px;border-radius:4px;background:rgba(255,255,255,.28);margin-bottom:6px}
+.ps-lines i:last-child{width:62%;margin-bottom:0;background:rgba(255,255,255,.16)}
+.ps-bar{margin-top:auto;background:rgba(255,255,255,.1);border-radius:10px;padding:8px 12px;font-size:12px;color:#ffd9bd;display:flex;justify-content:space-between}
+/* section base */
+section{padding:52px 0}
+.sec-head{max-width:40em;margin-bottom:30px}
+.sec-head h2{font-size:clamp(21px,2.6vw,27px);font-weight:800;letter-spacing:.4px}
+.sec-head h2 span{color:var(--orange-deep)}
+.sec-head p{margin-top:10px;color:var(--ink-soft);font-size:15px}
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.step{
+background:var(--card);border:1px solid var(--line);border-radius:20px;padding:26px 22px;
+position:relative;transition:.25s;
+}
+.step:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(29,29,36,.07);border-color:#ffd9bd}
+.step-num{
+font-size:12px;font-weight:800;letter-spacing:1px;color:var(--orange-deep);
+background:var(--peach);display:inline-block;padding:3px 11px;border-radius:999px;margin-bottom:14px;
+}
+.step h3{font-size:17px;font-weight:700;margin-bottom:8px}
+.step p{font-size:14.5px;color:var(--ink-soft)}
+/* content cards */
+.rec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.rec-card{
+background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden;
+display:flex;flex-direction:column;transition:.25s;
+}
+.rec-card:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(29,29,36,.08)}
+.rec-top{height:118px;display:flex;align-items:flex-end;padding:16px;position:relative}
+.rec-top.c1{background:linear-gradient(135deg,#ffb27a,#ff7a18)}
+.rec-top.c2{background:linear-gradient(135deg,#a78bfa,#6d28d9)}
+.rec-top.c3{background:linear-gradient(135deg,#fda4af,#e11d48)}
+.rec-tag{background:rgba(255,255,255,.9);color:var(--ink);font-size:12px;font-weight:700;padding:3px 10px;border-radius:999px}
+.rec-body{padding:18px 20px 22px;display:flex;flex-direction:column;gap:8px;flex:1}
+.rec-body h3{font-size:16.5px;font-weight:700}
+.rec-body p{font-size:14px;color:var(--ink-soft);flex:1}
+.rec-meta{font-size:12.5px;color:var(--muted);display:flex;gap:12px;padding-top:8px;border-top:1px dashed var(--line)}
+/* article */
+.article-grid{display:grid;grid-template-columns:1.4fr .6fr;gap:40px;align-items:start}
+.prose h2{font-size:clamp(20px,2.4vw,25px);margin-bottom:16px;font-weight:800}
+.prose h3{font-size:16.5px;margin:24px 0 8px;font-weight:700;color:var(--ink)}
+.prose p{font-size:15px;color:var(--ink-soft);margin-bottom:12px}
+.prose strong{color:var(--ink);font-weight:700}
+.aside{
+background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;
+position:sticky;top:88px;
+}
+.aside h3{font-size:16px;font-weight:800;margin-bottom:14px}
+.aside ul{list-style:none;display:flex;flex-direction:column;gap:12px}
+.aside li{font-size:14px;color:var(--ink-soft);padding-left:20px;position:relative}
+.aside li::before{content:"";position:absolute;left:0;top:8px;width:8px;height:8px;border-radius:2px;background:var(--orange);transform:rotate(45deg)}
+/* faq */
+.faq{display:flex;flex-direction:column;gap:12px;max-width:820px}
+details{
+background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 20px;
+}
+details[open]{border-color:#ffd9bd;background:#fffdfa}
+summary{
+cursor:pointer;font-weight:700;font-size:15.5px;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px;
+}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:20px;color:var(--orange-deep);font-weight:600;line-height:1}
+details[open] summary::after{content:"–"}
+details p{font-size:14.5px;color:var(--ink-soft);margin-top:10px}
+/* cta band */
+.band{
+background:linear-gradient(135deg,#ff8a2b,#e85d04);
+border-radius:26px;padding:44px 40px;color:#fff;
+display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap;
+}
+.band h2{font-size:clamp(20px,2.6vw,26px);font-weight:800;letter-spacing:.4px}
+.band p{font-size:14.5px;opacity:.92;margin-top:8px;max-width:36em}
+.band .btn-white{
+background:#fff;color:var(--orange-deep);font-weight:700;font-size:15px;
+padding:13px 26px;border-radius:14px;pointer-events:none;white-space:nowrap;
+}
+/* footer */
+footer{border-top:1px solid var(--line);padding:36px 0 44px;background:#fff}
+.foot-inner{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:flex-start}
+.foot-brand{max-width:26em}
+.foot-brand .logo{font-size:16px;margin-bottom:10px}
+.foot-brand p{font-size:13.5px;color:var(--muted)}
+.foot-links{display:flex;gap:40px;flex-wrap:wrap}
+.foot-links h4{font-size:13.5px;font-weight:700;margin-bottom:10px}
+.foot-links ul{list-style:none;display:flex;flex-direction:column;gap:7px;font-size:13.5px;color:var(--muted)}
+.foot-links a:hover{color:var(--orange-deep)}
+.copy{margin-top:26px;padding-top:18px;border-top:1px solid var(--line);font-size:12.5px;color:var(--muted);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+/* responsive */
+@media(max-width:900px){
+.hero-grid{grid-template-columns:1fr;gap:32px}
+.hero-visual{max-width:420px;margin:0 auto}
+.steps{grid-template-columns:1fr}
+.rec-grid{grid-template-columns:1fr}
+.article-grid{grid-template-columns:1fr}
+.aside{position:static}
+nav ul{display:none}
+}
+@media(max-width:600px){
+.nav-inner{height:60px}
+.logo{font-size:15px}
+.logo svg{width:26px;height:26px}
+.nav-cta{padding:8px 14px;font-size:13px}
+.hero{padding:36px 0 30px}
+.hero p.lead{font-size:15px}
+section{padding:38px 0}
+.band{padding:30px 24px}
+.foot-links{gap:26px}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header>
+<div class="wrap nav-inner">
+<a class="logo" href="#top" aria-label="黄果短剧下载首页">
+<svg width="30" height="30" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#ff7a18"/><path d="M24 20l22 12-22 12z" fill="#fff"/></svg>
+<span>黄果短剧下载</span>
+</a>
+<nav aria-label="主导航">
+<ul>
+<li><a href="#start">下载流程</a></li>
+<li><a href="#picks">热门短剧</a></li>
+<li><a href="#guide">离线观看</a></li>
+<li><a href="#faq">常见问题</a></li>
+</ul>
+</nav>
+<a class="nav-cta" href="#start">
+<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 21h14"/></svg>
+获取下载入口
+</a>
+</div>
+</header>
+
+<main id="top">
+
+<!-- 首屏 -->
+<section class="hero">
+<div class="wrap hero-grid">
+<div>
+<span class="tag">短剧资源 · 整季缓存 · 离线观看</span>
+<h1>黄果短剧下载</h1>
+<p class="lead">黄果短剧下载面向想在手机上看完整短剧的观众：先确认剧名与集数，再按整季批量缓存，通勤或断网时也能顺畅追剧。本页把下载入口、清晰度选择与常见卡点讲清楚。</p>
+<div class="hero-actions">
+<a class="btn-main" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 21h14"/></svg>
+下载
+</a>
+<a class="btn-ghost" href="#picks">先看热门短剧</a>
+</div>
+<p class="hero-note">下载前建议预留 2–4GB 存储空间，整季缓存会更省心。</p>
+</div>
+<div class="hero-visual" aria-hidden="true">
+<div class="phone">
+<div class="phone-screen">
+<div class="ps-title">我的缓存 · 整季</div>
+<div class="ps-card">
+<div class="ps-thumb"><svg width="16" height="16" viewBox="0 0 64 64"><path d="M24 20l22 12-22 12z" fill="#fff"/></svg></div>
+<div class="ps-lines"><i></i><i></i></div>
+</div>
+<div class="ps-card">
+<div class="ps-thumb alt"><svg width="16" height="16" viewBox="0 0 64 64"><path d="M24 20l22 12-22 12z" fill="#fff"/></svg></div>
+<div class="ps-lines"><i></i><i></i></div>
+</div>
+<div class="ps-card">
+<div class="ps-thumb alt2"><svg width="16" height="16" viewBox="0 0 64 64"><path d="M24 20l22 12-22 12z" fill="#fff"/></svg></div>
+<div class="ps-lines"><i></i><i></i></div>
+</div>
+<div class="ps-bar"><span>已缓存 24 集</span><span>离线可看</span></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 下载流程 -->
+<section id="start">
+<div class="wrap">
+<div class="sec-head">
+<h2>黄果短剧下载<span>三步走</span></h2>
+<p>短剧单集时长通常只有几分钟，零散点开容易被打断。按下面的顺序操作，可以把一部剧的整季内容一次性准备好。</p>
+</div>
+<div class="steps">
+<div class="step">
+<span class="step-num">STEP 01</span>
+<h3>确认剧名与集数</h3>
+<p>先在剧集列表核对剧名、主演和总集数，避免同名短剧混淆。确认后进入剧集详情页，能看到更新到第几集、是否已完结。</p>
+</div>
+<div class="step">
+<span class="step-num">STEP 02</span>
+<h3>选择清晰度并批量缓存</h3>
+<p>详情页提供标清与高清两档，网络稳定时选高清，流量有限时选标清。点“整季缓存”后系统按集排队，可随时暂停与续传。</p>
+</div>
+<div class="step">
+<span class="step-num">STEP 03</span>
+<h3>在缓存列表管理</h3>
+<p>已完成的剧集统一出现在缓存列表，支持按剧集分组查看、删除单集或整季清理。删除后需重新下载，建议保留常看的几部。</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 热门短剧 -->
+<section id="picks">
+<div class="wrap">
+<div class="sec-head">
+<h2>值得先下载的<span>短剧类型</span></h2>
+<p>不同题材适合的观看场景不一样。通勤路上适合节奏紧凑的都市剧，睡前则更适合甜宠或轻喜剧。下面是三类常见选择，方便你决定先缓存哪一部。</p>
+</div>
+<div class="rec-grid">
+<article class="rec-card">
+<div class="rec-top c1"><span class="rec-tag">都市逆袭</span></div>
+<div class="rec-body">
+<h3>都市逆袭类</h3>
+<p>主线集中在主角从低谷翻身，冲突密集、反转频繁，单集信息量大。适合碎片时间连续刷，下载整季后一次看完不会断节奏。</p>
+<div class="rec-meta"><span>节奏快</span><span>适合通勤</span></div>
+</div>
+</article>
+<article class="rec-card">
+<div class="rec-top c2"><span class="rec-tag">甜宠恋爱</span></div>
+<div class="rec-body">
+<h3>甜宠恋爱类</h3>
+<p>剧情温和、情绪轻松，适合睡前或周末放松。画面对清晰度要求较高，建议在 Wi-Fi 环境下选高清缓存，观感更好。</p>
+<div class="rec-meta"><span>轻松向</span><span>建议高清</span></div>
+</div>
+</article>
+<article class="rec-card">
+<div class="rec-top c3"><span class="rec-tag">悬疑推理</span></div>
+<div class="rec-body">
+<h3>悬疑推理类</h3>
+<p>线索层层推进，漏看一集容易接不上。整季缓存能保证连贯观看，也方便回看关键片段，是这类短剧最值得下载的题材。</p>
+<div class="rec-meta"><span>强连贯</span><span>适合整季</span></div>
+</div>
+</article>
+</div>
+</div>
+</section>
+
+<!-- 正文说明 -->
+<section id="guide">
+<div class="wrap article-grid">
+<div class="prose">
+<h2>黄果短剧下载前需要了解的事</h2>
+<p>短剧的观看习惯和长剧差别很大：一集往往只有几分钟，观众更依赖连续刷完。因此<strong>黄果短剧下载</strong>的核心并不是单集保存，而是把一部剧的整季内容提前准备好，让观看过程不被打断。</p>
+
+<h3>存储空间与清晰度</h3>
+<p>整季缓存的体积取决于集数和清晰度。标清一集通常在几十 MB，高清则会明显增加。若手机剩余空间有限，可以先下载前半季，看完再清理并续下后半季，这样既能保证<strong>黄果短剧下载</strong>的完整性，也不至于挤占相册和聊天记录的空间。</p>
+
+<h3>网络与续传</h3>
+<p>批量缓存建议在 Wi-Fi 下进行。中途切到移动网络时，下载会暂停而不是失败，回到 Wi-Fi 后可继续。部分机型在后台限制较多，缓存期间保持应用在前台或加入后台白名单，能减少中断。</p>
+
+<h3>离线观看的实际体验</h3>
+<p>完成<strong>黄果短剧下载</strong>后，缓存内容不依赖网络即可播放，地铁、电梯和航班上都能接着看。需要注意的是，离线播放同样消耗电量，连续追剧时建议开启省电模式并调低屏幕亮度。</p>
+
+<h3>版本与内容更新</h3>
+<p>短剧常有补更或调整的情况，已缓存的剧集可能不是最终版本。若发现剧集列表显示新集数，重新进入详情页即可补下新增部分。定期清理过期缓存，也能让<strong>黄果短剧下载</strong>列表保持整洁，快速找到正在追的剧。</p>
+</div>
+<aside class="aside">
+<h3>下载前小清单</h3>
+<ul>
+<li>确认剧名与总集数</li>
+<li>预留 2–4GB 存储空间</li>
+<li>优先在 Wi-Fi 下批量缓存</li>
+<li>按观看场景选择清晰度</li>
+<li>看完及时清理旧缓存</li>
+</ul>
+</aside>
+</div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+<div class="wrap">
+<div class="sec-head">
+<h2>黄果短剧下载<span>常见问题</span></h2>
+<p>关于缓存、清晰度和离线播放，观众最常遇到的几个问题集中在这里。</p>
+</div>
+<div class="faq">
+<details open>
+<summary>整季缓存要多久？</summary>
+<p>时长取决于集数与网络速度。一集标清内容在稳定 Wi-Fi 下通常几十秒到一两分钟，整季会按顺序排队。中途可以暂停，已完成的部分不会丢失。</p>
+</details>
+<details>
+<summary>下载失败或卡在某一集怎么办？</summary>
+<p>先检查剩余存储空间是否充足，再确认网络是否稳定。单集反复失败时，可删除该集重新加入队列；若多集同时异常，重启应用后重新发起缓存通常能恢复。</p>
+</details>
+<details>
+<summary>标清和高清怎么选？</summary>
+<p>屏幕较小或流量有限时选标清，能显著减少占用；在大屏手机上观看、或题材对画面细节要求高时选高清。两种清晰度都可以离线播放。</p>
+</details>
+<details>
+<summary>缓存内容换了设备还能看吗？</summary>
+<p>缓存保存在本机，不随账号跨设备同步。更换手机后需要在新设备上重新进行黄果短剧下载，建议提前规划好常看的剧集。</p>
+</details>
+</div>
+</div>
+</section>
+
+<!-- CTA -->
+<section>
+<div class="wrap">
+<div class="band">
+<div>
+<h2>把想看的短剧一次准备好</h2>
+<p>从确认剧名到整季缓存，黄果短剧下载的关键在于提前规划存储与清晰度。准备好空间，挑一部想追的剧，通勤路上就能直接开看。</p>
+</div>
+<a class="btn-white" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">下载</a>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer>
+<div class="wrap">
+<div class="foot-inner">
+<div class="foot-brand">
+<a class="logo" href="#top">
+<svg width="26" height="26" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#ff7a18"/><path d="M24 20l22 12-22 12z" fill="#fff"/></svg>
+<span>黄果短剧下载</span>
+</a>
+<p>围绕短剧资源获取、整季缓存与离线观看整理实用信息，帮助观众把想看的短剧提前准备好。</p>
+</div>
+<div class="foot-links">
+<div>
+<h4>页面导航</h4>
+<ul>
+<li><a href="#start">下载流程</a></li>
+<li><a href="#picks">热门短剧</a></li>
+<li><a href="#guide">离线观看</a></li>
+<li><a href="#faq">常见问题</a></li>
+</ul>
+</div>
+<div>
+<h4>相关说明</h4>
+<ul>
+<li><a href="#guide">存储与清晰度</a></li>
+<li><a href="#start">批量缓存操作</a></li>
+<li><a href="#faq">跨设备观看</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="copy">
+<span>© 2024 黄果短剧下载 · 短剧缓存与离线观看</span>
+<span>资源以实际剧集列表为准</span>
+</div>
+</div>
+</footer>
+
+</body>
+</html>
