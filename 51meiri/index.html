@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>51每日大赛官网首页-51每日大赛热点内容_大赛每日看点与通道入口</title>
+<meta name="description" content="51每日大赛官网首页聚焦每日大赛热点内容，汇集当日大赛看点、热门话题、事件脉络与官网入口通道，帮助访问者快速了解每日大赛动态与内容分布。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f1220'/%3E%3Cpath d='M18 22h28M18 32h20M18 42h24' stroke='%23ffb648' stroke-width='5' stroke-linecap='round'/%3E%3Ccircle cx='48' cy='44' r='7' fill='%23ff5d5d'/%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#0f1220;
+  --bg-2:#161a2e;
+  --card:#1c2138;
+  --line:rgba(255,255,255,.09);
+  --txt:#eef1f8;
+  --sub:#a7aec6;
+  --accent:#ffb648;
+  --accent-2:#ff5d5d;
+  --radius:16px;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+  background:var(--bg);
+  color:var(--txt);
+  line-height:1.75;
+  font-size:16px;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none;}
+img,svg{display:block;max-width:100%;}
+.wrap{width:100%;max-width:1140px;margin:0 auto;padding:0 20px;}
+
+/* header */
+header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(15,18,32,.88);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.nav{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:16px;height:68px;
+}
+.logo{display:flex;align-items:center;gap:10px;flex-shrink:0;}
+.logo-mark{
+  width:38px;height:38px;border-radius:11px;
+  background:linear-gradient(140deg,#ffb648,#ff5d5d);
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+}
+.logo-text{
+  font-size:15px;font-weight:800;letter-spacing:.3px;white-space:nowrap;
+}
+.nav-links{display:flex;gap:22px;font-size:14.5px;color:var(--sub);}
+.nav-links a{transition:color .2s;white-space:nowrap;}
+.nav-links a:hover{color:var(--accent);}
+.nav-cta{
+  background:var(--accent);color:#1a1409;font-weight:700;
+  padding:9px 18px;border-radius:10px;font-size:14px;
+  white-space:nowrap;transition:transform .2s,box-shadow .2s;
+}
+.nav-cta:hover{transform:translateY(-1px);box-shadow:0 8px 20px rgba(255,182,72,.3);}
+
+/* hero */
+.hero{padding:56px 0 46px;position:relative;overflow:hidden;}
+.hero::before{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(600px 260px at 82% 12%,rgba(255,93,93,.16),transparent 70%),
+    radial-gradient(520px 240px at 8% 84%,rgba(255,182,72,.13),transparent 70%);
+  pointer-events:none;
+}
+.hero-grid{
+  position:relative;
+  display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center;
+}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12.5px;letter-spacing:1px;color:var(--accent);
+  border:1px solid rgba(255,182,72,.35);
+  background:rgba(255,182,72,.08);
+  padding:5px 12px;border-radius:99px;margin-bottom:18px;
+}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--accent-2);animation:pulse 1.6s infinite;}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+h1{
+  font-size:clamp(26px,4vw,42px);
+  line-height:1.28;font-weight:900;letter-spacing:-.5px;
+  margin-bottom:16px;
+}
+h1 .hl{
+  background:linear-gradient(180deg,transparent 62%,rgba(255,182,72,.35) 62%);
+  padding:0 2px;
+}
+.hero p.lead{color:var(--sub);font-size:15.5px;max-width:520px;margin-bottom:26px;}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:12px 22px;border-radius:11px;font-size:15px;font-weight:700;
+  transition:transform .2s,box-shadow .2s,background .2s;
+}
+.btn-main{background:var(--accent);color:#1a1409;}
+.btn-main:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(255,182,72,.32);}
+.btn-ghost{border:1px solid var(--line);color:var(--txt);background:rgba(255,255,255,.03);}
+.btn-ghost:hover{background:rgba(255,255,255,.08);}
+
+/* hero visual */
+.hero-visual{
+  background:linear-gradient(160deg,#1e2440,#151a2c);
+  border:1px solid var(--line);border-radius:20px;
+  padding:22px;position:relative;
+}
+.hv-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;}
+.hv-title{font-size:13px;color:var(--sub);letter-spacing:.5px;}
+.hv-badge{font-size:11px;background:rgba(255,93,93,.15);color:#ff8b8b;padding:3px 9px;border-radius:99px;}
+.hv-row{
+  display:flex;align-items:center;gap:12px;
+  padding:11px 12px;border-radius:11px;background:rgba(255,255,255,.04);
+  margin-bottom:9px;
+}
+.hv-row:last-child{margin-bottom:0;}
+.hv-num{
+  width:24px;height:24px;border-radius:7px;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  font-size:12px;font-weight:800;background:rgba(255,182,72,.16);color:var(--accent);
+}
+.hv-row:nth-child(2) .hv-num{background:rgba(255,93,93,.16);color:#ff8b8b;}
+.hv-row:nth-child(3) .hv-num{background:rgba(120,170,255,.16);color:#8db6ff;}
+.hv-name{font-size:13.5px;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.hv-tag{font-size:11px;color:var(--sub);}
+
+/* generic section */
+section{padding:52px 0;}
+.sec-head{margin-bottom:28px;}
+.sec-kicker{font-size:12.5px;letter-spacing:1.5px;color:var(--accent);font-weight:700;margin-bottom:8px;}
+h2{font-size:clamp(21px,2.6vw,27px);font-weight:800;letter-spacing:-.3px;margin-bottom:10px;}
+.sec-desc{color:var(--sub);font-size:14.5px;max-width:640px;}
+
+/* cards */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:24px 22px;transition:transform .22s,border-color .22s;
+}
+.card:hover{transform:translateY(-3px);border-color:rgba(255,182,72,.4);}
+.card-icon{
+  width:42px;height:42px;border-radius:12px;margin-bottom:15px;
+  background:rgba(255,182,72,.12);
+  display:flex;align-items:center;justify-content:center;
+}
+.card h3{font-size:16.5px;margin-bottom:9px;font-weight:800;}
+.card p{font-size:14px;color:var(--sub);}
+
+/* timeline list */
+.feed{display:grid;grid-template-columns:1fr;gap:14px;}
+.feed-item{
+  display:grid;grid-template-columns:78px 1fr;gap:18px;
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:20px 22px;
+}
+.feed-date{
+  font-size:13px;font-weight:800;color:var(--accent);
+  border-right:1px solid var(--line);padding-right:16px;
+}
+.feed-date span{display:block;font-size:11.5px;color:var(--sub);font-weight:500;margin-top:3px;}
+.feed-body h3{font-size:15.5px;margin-bottom:7px;font-weight:800;}
+.feed-body p{font-size:14px;color:var(--sub);}
+
+/* channel / entry */
+.entry-panel{
+  background:linear-gradient(140deg,#222a48,#171c30);
+  border:1px solid rgba(255,182,72,.22);
+  border-radius:20px;padding:34px 32px;
+  display:grid;grid-template-columns:1.3fr .7fr;gap:30px;align-items:center;
+}
+.entry-panel h2{margin-bottom:12px;}
+.entry-panel p{color:var(--sub);font-size:14.5px;margin-bottom:22px;}
+.entry-list{list-style:none;display:grid;gap:10px;}
+.entry-list li{
+  display:flex;align-items:center;gap:10px;font-size:14px;color:var(--sub);
+}
+.entry-list li::before{
+  content:"";width:7px;height:7px;border-radius:2px;background:var(--accent);flex-shrink:0;
+}
+.entry-side{display:grid;gap:12px;}
+.mini-box{
+  background:rgba(255,255,255,.04);border:1px solid var(--line);
+  border-radius:13px;padding:16px;
+}
+.mini-box .k{font-size:12px;color:var(--sub);margin-bottom:5px;}
+.mini-box .v{font-size:19px;font-weight:900;color:var(--accent);}
+.mini-box .v small{font-size:12px;color:var(--sub);font-weight:500;margin-left:4px;}
+
+/* filter */
+.filter-bar{
+  display:flex;flex-wrap:wrap;gap:9px;margin-bottom:22px;
+}
+.chip{
+  border:1px solid var(--line);background:rgba(255,255,255,.03);
+  color:var(--sub);font-size:13.5px;padding:7px 16px;border-radius:99px;
+  cursor:pointer;transition:all .2s;font-family:inherit;
+}
+.chip:hover{color:var(--txt);border-color:rgba(255,255,255,.25);}
+.chip.active{background:var(--accent);border-color:var(--accent);color:#1a1409;font-weight:700;}
+.topic-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+.topic{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:20px 22px;transition:border-color .2s;
+}
+.topic:hover{border-color:rgba(255,182,72,.4);}
+.topic .t-meta{display:flex;justify-content:space-between;font-size:12px;color:var(--sub);margin-bottom:9px;}
+.topic .t-meta .cat{color:var(--accent);font-weight:700;}
+.topic h3{font-size:15.5px;margin-bottom:8px;font-weight:800;}
+.topic p{font-size:13.8px;color:var(--sub);}
+.hidden{display:none;}
+
+/* stats strip */
+.stats{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:16px;
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  padding:30px 0;
+}
+.stat{text-align:center;}
+.stat .n{font-size:26px;font-weight:900;color:var(--accent);letter-spacing:-.5px;}
+.stat .l{font-size:13px;color:var(--sub);margin-top:4px;}
+
+/* download */
+.dl-row{
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;
+  gap:18px;background:var(--card);border:1px solid var(--line);
+  border-radius:var(--radius);padding:24px 26px;
+}
+.dl-row .dl-info h3{font-size:16px;margin-bottom:6px;}
+.dl-row .dl-info p{font-size:13.5px;color:var(--sub);}
+.dl-btn{
+  background:rgba(255,255,255,.08);border:1px solid var(--line);
+  color:var(--txt);padding:11px 26px;border-radius:11px;font-weight:700;font-size:14.5px;
+  pointer-events:none;opacity:.75;
+}
+
+/* footer */
+footer{
+  border-top:1px solid var(--line);
+  padding:36px 0 30px;margin-top:20px;
+}
+.foot-top{
+  display:flex;justify-content:space-between;align-items:flex-start;
+  gap:24px;flex-wrap:wrap;margin-bottom:24px;
+}
+.foot-brand{max-width:420px;}
+.foot-brand .logo{margin-bottom:12px;}
+.foot-brand p{font-size:13.5px;color:var(--sub);}
+.foot-links{display:flex;flex-wrap:wrap;gap:12px 26px;font-size:13.5px;color:var(--sub);}
+.foot-links a:hover{color:var(--accent);}
+.foot-bottom{
+  border-top:1px solid var(--line);padding-top:18px;
+  font-size:12.5px;color:#767d94;
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;
+}
+
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:32px;}
+  .cards{grid-template-columns:1fr 1fr;}
+  .entry-panel{grid-template-columns:1fr;}
+  .stats{grid-template-columns:1fr 1fr;gap:24px 16px;}
+}
+@media (max-width:680px){
+  .nav{height:60px;gap:10px;}
+  .logo-text{font-size:13px;}
+  .nav-links{display:none;}
+  .nav-cta{padding:8px 14px;font-size:13px;}
+  .hero{padding:36px 0 32px;}
+  .cards{grid-template-columns:1fr;}
+  .topic-grid{grid-template-columns:1fr;}
+  .feed-item{grid-template-columns:1fr;gap:10px;}
+  .feed-date{border-right:none;border-bottom:1px solid var(--line);padding:0 0 8px;display:flex;gap:8px;align-items:baseline;}
+  .feed-date span{margin-top:0;}
+  section{padding:38px 0;}
+  .entry-panel{padding:26px 22px;}
+  .dl-row{padding:20px 18px;}
+  .dl-btn{width:100%;text-align:center;}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#top" class="logo" aria-label="51每日大赛官网首页">
+      <span class="logo-mark" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+          <path d="M4 7h16M4 12h11M4 17h13" stroke="#1a1409" stroke-width="2.4" stroke-linecap="round"/>
+          <circle cx="18.5" cy="17" r="3.2" fill="#1a1409"/>
+        </svg>
+      </span>
+      <span class="logo-text">51每日大赛官网首页</span>
+    </a>
+    <nav class="nav-links" aria-label="主导航">
+      <a href="#today">今日看点</a>
+      <a href="#feed">每日动态</a>
+      <a href="#topics">热门话题</a>
+      <a href="#channel">官网通道</a>
+      <a href="#download">下载</a>
+    </nav>
+    <a href="#channel" class="nav-cta">进入官网通道</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow"><span class="dot"></span>每日热点聚合 · 当日更新</span>
+        <h1>51每日大赛官网首页</h1>
+        <p class="lead">这里是 51每日大赛官网首页 的内容入口：把每日大赛的热点看点、话题脉络与官网通道集中在一处，方便访问者按日期与分类快速定位当天最受关注的大赛内容。</p>
+        <div class="hero-actions">
+          <a href="#today" class="btn btn-main">查看今日看点</a>
+          <a href="#topics" class="btn btn-ghost">浏览热门话题</a>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="hv-head">
+          <span class="hv-title">今日热度榜</span>
+          <span class="hv-badge">实时</span>
+        </div>
+        <div class="hv-row">
+          <span class="hv-num">1</span>
+          <span class="hv-name">当日大赛焦点事件</span>
+          <span class="hv-tag">高热度</span>
+        </div>
+        <div class="hv-row">
+          <span class="hv-num">2</span>
+          <span class="hv-name">热门话题讨论汇总</span>
+          <span class="hv-tag">持续</span>
+        </div>
+        <div class="hv-row">
+          <span class="hv-num">3</span>
+          <span class="hv-name">官网通道入口指引</span>
+          <span class="hv-tag">常驻</span>
+        </div>
+        <div class="hv-row">
+          <span class="hv-num">4</span>
+          <span class="hv-name">往期大赛内容回顾</span>
+          <span class="hv-tag">归档</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TODAY -->
+  <section id="today">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-kicker">今日看点</div>
+        <h2>每天打开，先看这三件事</h2>
+        <p class="sec-desc">51每日大赛官网首页 把当日内容拆成看点、话题与通道三条线，访问者不必逐页翻找，就能判断今天值不值得继续往下看。</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <path d="M12 3l2.6 5.6 6.1.8-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L3.3 9.4l6.1-.8L12 3z" stroke="#ffb648" stroke-width="1.8" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>当日焦点是什么</h3>
+          <p>先看首页顶部的焦点条目，确认今天大赛讨论的中心事件，再决定是否深入具体话题页。</p>
+        </article>
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <path d="M4 5h16v11H9l-5 4V5z" stroke="#ffb648" stroke-width="1.8" stroke-linejoin="round"/>
+              <path d="M8 9h8M8 12h5" stroke="#ffb648" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>话题热度走向</h3>
+          <p>热门话题区按类别归档讨论，方便对照同一事件在不同时间点的表述变化与关注度差异。</p>
+        </article>
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <rect x="4" y="4" width="16" height="16" rx="4" stroke="#ffb648" stroke-width="1.8"/>
+              <path d="M9 12l2.2 2.2L15.5 10" stroke="#ffb648" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>官网通道是否畅通</h3>
+          <p>通道区集中列出常用入口，访问者可按用途选择路径，减少在多个页面之间反复跳转。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEED -->
+  <section id="feed">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-kicker">每日动态</div>
+        <h2>按日期排列的内容脉络</h2>
+        <p class="sec-desc">每日大赛的内容以日期为单位沉淀。下面的条目展示 51每日大赛官网首页 如何把一天内的多个事件串成可读的脉络。</p>
+      </div>
+      <div class="feed">
+        <article class="feed-item">
+          <div class="feed-date">第一时段<span>早间</span></div>
+          <div class="feed-body">
+            <h3>话题起势与初步汇总</h3>
+            <p>早间时段以话题汇总为主，把分散的讨论归入统一分类，方便后续对照。此时内容偏轻，适合快速浏览标题与摘要。</p>
+          </div>
+        </article>
+        <article class="feed-item">
+          <div class="feed-date">第二时段<span>午间</span></div>
+          <div class="feed-body">
+            <h3>焦点事件进入集中讨论</h3>
+            <p>午间通常是热度上升期，同一事件会出现多种表述。51每日大赛官网首页 在此阶段强调信息来源与表述边界，避免把讨论当作结论。</p>
+          </div>
+        </article>
+        <article class="feed-item">
+          <div class="feed-date">第三时段<span>晚间</span></div>
+          <div class="feed-body">
+            <h3>当日内容归档与回顾</h3>
+            <p>晚间对当天条目做归并，保留有持续关注价值的部分，形成可回溯的日期记录，也为次日对比提供基准。</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="wrap">
+    <div class="stats" aria-label="内容结构概览">
+      <div class="stat"><div class="n">3</div><div class="l">内容主线</div></div>
+      <div class="stat"><div class="n">6</div><div class="l">话题分类</div></div>
+      <div class="stat"><div class="n">每日</div><div class="l">更新节奏</div></div>
+      <div class="stat"><div class="n">1</div><div class="l">统一入口</div></div>
+    </div>
+  </div>
+
+  <!-- TOPICS -->
+  <section id="topics">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-kicker">热门话题</div>
+        <h2>按类别找到你关心的大赛内容</h2>
+        <p class="sec-desc">话题区是 51每日大赛官网首页 的主体内容区，下面按类别整理当前讨论较多的方向，点击分类可筛选对应条目。</p>
+      </div>
+      <div class="filter-bar" role="group" aria-label="话题分类筛选">
+        <button class="chip active" data-cat="all" type="button">全部</button>
+        <button class="chip" data-cat="焦点" type="button">焦点事件</button>
+        <button class="chip" data-cat="讨论" type="button">讨论热点</button>
+        <button class="chip" data-cat="通道" type="button">通道入口</button>
+      </div>
+      <div class="topic-grid" id="topicGrid">
+        <article class="topic" data-cat="焦点">
+          <div class="t-meta"><span class="cat">焦点事件</span><span>当日</span></div>
+          <h3>大赛焦点事件的前后脉络</h3>
+          <p>把事件拆成起因、发酵与后续三段来看，比只看单条描述更容易判断信息的可靠程度。</p>
+        </article>
+        <article class="topic" data-cat="讨论">
+          <div class="t-meta"><span class="cat">讨论热点</span><span>持续</span></div>
+          <h3>讨论区的常见表述差异</h3>
+          <p>同一件事在不同讨论区会有不同说法。对照表述差异，是理解大赛热点内容的有效方法。</p>
+        </article>
+        <article class="topic" data-cat="通道">
+          <div class="t-meta"><span class="cat">通道入口</span><span>常驻</span></div>
+          <h3>官网通道的分类与用途</h3>
+          <p>通道按用途区分，查看类与操作类分开列出，访问者能按需选择，不必在页面间来回寻找。</p>
+        </article>
+        <article class="topic" data-cat="焦点">
+          <div class="t-meta"><span class="cat">焦点事件</span><span>归档</span></div>
+          <h3>往期大赛内容的回顾方式</h3>
+          <p>往期条目按日期归档，回看时先看标题与摘要，再决定是否展开，能显著减少阅读负担。</p>
+        </article>
+        <article class="topic" data-cat="讨论">
+          <div class="t-meta"><span class="cat">讨论热点</span><span>当日</span></div>
+          <h3>热点内容的阅读顺序建议</h3>
+          <p>建议先读焦点摘要，再看分类讨论，最后回到通道页确认入口，形成完整的阅读闭环。</p>
+        </article>
+        <article class="topic" data-cat="通道">
+          <div class="t-meta"><span class="cat">通道入口</span><span>说明</span></div>
+          <h3>51每日大赛官网首页 的定位</h3>
+          <p>本页承担内容聚合与入口指引两个角色，不替代具体内容页，也不对讨论内容做结论性判断。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHANNEL -->
+  <section id="channel">
+    <div class="wrap">
+      <div class="entry-panel">
+        <div>
+          <div class="sec-kicker">官网通道</div>
+          <h2>从一个入口开始，少走弯路</h2>
+          <p>51每日大赛官网首页 把常用通道集中陈列，访问者可依据当前需求选择对应路径。通道信息保持稳定，便于反复访问时快速定位。</p>
+          <ul class="entry-list">
+            <li>内容查看通道：浏览当日与往期大赛内容条目</li>
+            <li>话题分类通道：按类别筛选当前讨论热点</li>
+            <li>动态记录通道：按日期回看每日内容脉络</li>
+            <li>下载通道：获取页面相关资源，入口见下方下载区</li>
+          </ul>
+        </div>
+        <div class="entry-side">
+          <div class="mini-box">
+            <div class="k">内容更新</div>
+            <div class="v">每日<small>持续维护</small></div>
+          </div>
+          <div class="mini-box">
+            <div class="k">入口状态</div>
+            <div class="v">常驻<small>稳定可达</small></div>
+          </div>
+          <div class="mini-box">
+            <div class="k">内容范围</div>
+            <div class="v">热点<small>大赛讨论</small></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOWNLOAD -->
+  <section id="download">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-kicker">资源下载</div>
+        <h2>页面相关资源</h2>
+        <p class="sec-desc">如需离线保存页面说明或通道清单，可通过下方入口获取。资源内容与 51每日大赛官网首页 当前展示的信息保持一致。</p>
+      </div>
+      <div class="dl-row">
+        <div class="dl-info">
+          <h3>51每日大赛官网首页 资源包</h3>
+          <p>包含通道清单与话题分类说明，便于在本地查阅。</p>
+        </div>
+        <a href="#" class="dl-btn" data-download-placeholder="true" aria-disabled="true" tabindex="-1">下载</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="logo">
+          <span class="logo-mark" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path d="M4 7h16M4 12h11M4 17h13" stroke="#1a1409" stroke-width="2.4" stroke-linecap="round"/>
+              <circle cx="18.5" cy="17" r="3.2" fill="#1a1409"/>
+            </svg>
+          </span>
+          <span class="logo-text">51每日大赛官网首页</span>
+        </div>
+        <p>51每日大赛官网首页 聚合每日大赛的热点内容、话题分类与通道入口，为访问者提供清晰的浏览路径与内容脉络。</p>
+      </div>
+      <nav class="foot-links" aria-label="页尾导航">
+        <a href="#today">今日看点</a>
+        <a href="#feed">每日动态</a>
+        <a href="#topics">热门话题</a>
+        <a href="#channel">官网通道</a>
+        <a href="#download">下载</a>
+      </nav>
+    </div>
+    <div class="foot-bottom">
+      <span>© 51每日大赛官网首页 · 内容聚合与通道指引</span>
+      <span>页面内容以当日展示为准</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var chips = document.querySelectorAll('.chip');
+  var topics = document.querySelectorAll('#topicGrid .topic');
+  chips.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      chips.forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      var cat = btn.getAttribute('data-cat');
+      topics.forEach(function(t){
+        var show = (cat === 'all') || (t.getAttribute('data-cat') === cat);
+        t.classList.toggle('hidden', !show);
+      });
+    });
+  });
+})();
+</script>
+
+</body>
+  </html>
