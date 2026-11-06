@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>91影院入口-在线观影入口_高清影视资源入口地址</title>
+<meta name="description" content="91影院入口首页，汇集高清电影、剧集与热门影视内容入口，提供清晰的观影导航、片单推荐与访问路径，方便快速找到想看的影视资源。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230d1b2a'/%3E%3Cpath d='M24 18l22 14-22 14z' fill='%23ffb703'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#0d1b2a;
+  --ink-2:#16283c;
+  --paper:#f6f4ef;
+  --card:#ffffff;
+  --amber:#ffb703;
+  --amber-deep:#e08e00;
+  --teal:#2a9d8f;
+  --muted:#5d6b7a;
+  --line:rgba(13,27,42,.12);
+  --radius:16px;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+img,svg{display:block;max-width:100%;}
+a{color:inherit;text-decoration:none;}
+.wrap{width:min(1120px,92vw);margin:0 auto;}
+
+/* ---------- header ---------- */
+.site-header{
+  background:var(--ink);
+  color:#fff;
+  position:sticky;top:0;z-index:50;
+  border-bottom:2px solid var(--amber);
+}
+.header-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:20px;padding:14px 0;flex-wrap:wrap;
+}
+.brand{display:flex;align-items:center;gap:10px;}
+.brand-mark{
+  width:38px;height:38px;border-radius:10px;
+  background:linear-gradient(140deg,var(--amber),var(--amber-deep));
+  display:grid;place-items:center;flex:none;
+}
+.brand-mark svg{width:20px;height:20px;}
+.brand-text{
+  font-size:20px;font-weight:800;letter-spacing:.5px;color:#fff;white-space:nowrap;
+}
+.nav{display:flex;gap:6px;flex-wrap:wrap;}
+.nav a{
+  font-size:14px;padding:6px 12px;border-radius:999px;color:#dbe4ee;
+  transition:.2s;
+}
+.nav a:hover,.nav a:focus-visible{background:rgba(255,255,255,.12);color:#fff;}
+.nav a.cta{
+  background:var(--amber);color:var(--ink);font-weight:700;
+}
+.nav a.cta:hover{background:#ffc733;}
+
+/* ---------- hero ---------- */
+.hero{
+  background:
+    radial-gradient(900px 380px at 88% -10%,rgba(42,157,143,.28),transparent 60%),
+    radial-gradient(700px 320px at 5% 0%,rgba(255,183,3,.18),transparent 65%),
+    var(--ink);
+  color:#fff;
+  padding:56px 0 48px;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.hero-grid{
+  display:grid;grid-template-columns:1.25fr .75fr;gap:44px;align-items:center;
+}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:13px;letter-spacing:.12em;color:var(--amber);
+  border:1px solid rgba(255,183,3,.45);border-radius:999px;
+  padding:4px 14px;margin-bottom:18px;
+}
+h1{
+  font-size:clamp(30px,4.6vw,48px);
+  line-height:1.2;margin:0 0 16px;font-weight:800;letter-spacing:.5px;
+}
+.hero p.lead{
+  font-size:16px;color:#c8d4e0;margin:0 0 26px;max-width:34em;
+}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:12px 22px;border-radius:12px;font-weight:700;font-size:15px;
+  transition:.18s;border:1px solid transparent;cursor:pointer;
+}
+.btn-primary{background:var(--amber);color:var(--ink);}
+.btn-primary:hover{background:#ffc733;transform:translateY(-1px);}
+.btn-ghost{border-color:rgba(255,255,255,.28);color:#fff;}
+.btn-ghost:hover{background:rgba(255,255,255,.1);}
+.btn[aria-disabled="true"]{opacity:.85;cursor:default;}
+.hero-note{margin-top:18px;font-size:13px;color:#93a4b6;}
+
+.hero-art{
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:20px;padding:18px;
+}
+.screen{
+  border-radius:12px;overflow:hidden;background:#0a1420;
+  border:1px solid rgba(255,255,255,.1);
+}
+.hero-art figcaption{
+  font-size:12.5px;color:#93a4b6;margin-top:12px;text-align:center;
+}
+
+/* ---------- sections ---------- */
+section{padding:60px 0;}
+.sec-head{max-width:44em;margin-bottom:32px;}
+.sec-tag{
+  font-size:12.5px;font-weight:700;letter-spacing:.14em;color:var(--teal);
+  text-transform:uppercase;margin:0 0 8px;
+}
+h2{font-size:clamp(22px,2.8vw,30px);margin:0 0 12px;font-weight:800;line-height:1.3;}
+h3{font-size:17px;margin:0 0 8px;font-weight:700;}
+p{margin:0 0 14px;}
+.muted{color:var(--muted);}
+
+/* entry cards */
+.cards{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
+}
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:22px;transition:.2s;
+}
+.card:hover{transform:translateY(-3px);box-shadow:0 14px 30px -18px rgba(13,27,42,.35);}
+.card-icon{
+  width:42px;height:42px;border-radius:11px;display:grid;place-items:center;
+  background:rgba(255,183,3,.16);margin-bottom:14px;
+}
+.card-icon svg{width:22px;height:22px;}
+.card p{font-size:14.5px;color:var(--muted);margin:0;}
+.card .link-line{
+  margin-top:14px;font-size:13.5px;font-weight:700;color:var(--amber-deep);
+  display:inline-flex;align-items:center;gap:6px;
+}
+
+/* list */
+.list-panel{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:8px 24px;
+}
+.film-row{
+  display:flex;align-items:center;gap:18px;padding:18px 0;
+  border-bottom:1px dashed var(--line);
+}
+.film-row:last-child{border-bottom:none;}
+.film-no{
+  font-size:13px;font-weight:800;color:var(--teal);width:30px;flex:none;
+}
+.film-body{flex:1;min-width:0;}
+.film-body h3{font-size:16px;margin:0 0 4px;}
+.film-body p{font-size:14px;color:var(--muted);margin:0;}
+.pill{
+  flex:none;font-size:12.5px;font-weight:700;color:var(--ink);
+  background:rgba(42,157,143,.14);border-radius:999px;padding:4px 12px;
+}
+
+/* two column */
+.split{
+  display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;
+}
+.panel{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:26px;
+}
+.panel h3{margin-bottom:10px;}
+.checks{list-style:none;padding:0;margin:0;}
+.checks li{
+  position:relative;padding-left:26px;margin-bottom:12px;font-size:14.5px;color:var(--muted);
+}
+.checks li::before{
+  content:"";position:absolute;left:0;top:8px;width:14px;height:14px;
+  border-radius:4px;background:rgba(255,183,3,.25);
+  border:2px solid var(--amber-deep);
+}
+.checks strong{color:var(--ink);}
+
+/* search */
+.search-box{
+  display:flex;gap:10px;margin-bottom:22px;flex-wrap:wrap;
+}
+.search-box input{
+  flex:1;min-width:200px;padding:13px 16px;border-radius:12px;
+  border:1px solid var(--line);background:#fff;font-size:15px;font-family:inherit;
+  color:var(--ink);
+}
+.search-box input:focus{outline:2px solid rgba(255,183,3,.6);outline-offset:1px;}
+.search-box button{
+  padding:13px 24px;border-radius:12px;border:none;background:var(--ink);
+  color:#fff;font-weight:700;font-size:15px;font-family:inherit;cursor:pointer;
+}
+.search-box button:hover{background:var(--ink-2);}
+#searchResult{font-size:14px;color:var(--muted);min-height:24px;margin-bottom:8px;}
+.result-hit{color:var(--teal);font-weight:700;}
+
+/* faq */
+.faq{border-top:1px solid var(--line);}
+.faq details{
+  border-bottom:1px solid var(--line);padding:18px 0;
+}
+.faq summary{
+  cursor:pointer;font-weight:700;font-size:16px;list-style:none;
+  display:flex;justify-content:space-between;align-items:center;gap:16px;
+}
+.faq summary::-webkit-details-marker{display:none;}
+.faq summary::after{
+  content:"+";font-size:20px;color:var(--amber-deep);font-weight:800;flex:none;
+}
+.faq details[open] summary::after{content:"–";}
+.faq p{font-size:14.5px;color:var(--muted);margin:12px 0 0;}
+
+/* download */
+.download-band{
+  background:var(--ink);color:#fff;border-radius:20px;padding:36px;
+  display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap;
+}
+.download-band h2{color:#fff;margin-bottom:8px;}
+.download-band p{color:#b9c6d4;font-size:14.5px;margin:0;max-width:38em;}
+.download-band .btn{white-space:nowrap;}
+
+/* footer */
+.site-footer{
+  background:#0a1420;color:#8b9bad;padding:36px 0 28px;margin-top:20px;
+}
+.footer-top{
+  display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;
+  padding-bottom:22px;border-bottom:1px solid rgba(255,255,255,.08);
+}
+.footer-brand{font-size:17px;font-weight:800;color:#fff;letter-spacing:.5px;}
+.footer-links{display:flex;gap:18px;flex-wrap:wrap;font-size:14px;}
+.footer-links a:hover{color:var(--amber);}
+.footer-bottom{font-size:13px;padding-top:18px;line-height:1.7;}
+
+@media (max-width:860px){
+  .hero-grid{grid-template-columns:1fr;gap:32px;}
+  .cards{grid-template-columns:1fr;}
+  .split{grid-template-columns:1fr;gap:24px;}
+  section{padding:44px 0;}
+  .header-inner{padding:12px 0;}
+  .nav a{font-size:13px;padding:5px 10px;}
+  .download-band{padding:26px;}
+  .film-row{flex-wrap:wrap;gap:10px;}
+  .film-no{width:auto;}
+}
+@media (max-width:520px){
+  .brand-text{font-size:17px;}
+  .hero{padding:40px 0 34px;}
+  .list-panel{padding:4px 16px;}
+  .panel{padding:20px;}
+  .btn{padding:11px 18px;font-size:14px;}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="#top" aria-label="91影院入口 首页">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M9 6l9 6-9 6V6z" fill="#0d1b2a"/></svg>
+      </span>
+      <span class="brand-text">91影院入口</span>
+    </a>
+    <nav class="nav" aria-label="主导航">
+      <a href="#entries">入口导航</a>
+      <a href="#playlist">热门片单</a>
+      <a href="#guide">观影须知</a>
+      <a href="#search">片名查找</a>
+      <a href="#faq">常见问题</a>
+      <a class="cta" href="#entries">进入影院</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">高清观影 · 桌面与移动端通用</span>
+        <h1 id="hero-title">91影院入口</h1>
+        <p class="lead">91影院入口汇总了本站的观影入口、片单分类与访问路径。无论你想找一部高清电影、追更一部剧集，还是查看当前热门内容，都可以从这里开始，按类型、片名或推荐顺序进入对应页面。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#entries">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            查看入口导航
+          </a>
+          <a class="btn btn-ghost" href="#playlist">浏览热门片单</a>
+        </div>
+        <p class="hero-note">91影院入口页面本身不存储视频文件，仅提供内容分类与访问指引。</p>
+      </div>
+      <figure class="hero-art">
+        <div class="screen">
+          <svg viewBox="0 0 360 210" role="img" aria-label="影院银幕主题插画">
+            <defs>
+              <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#1b3a52"/>
+                <stop offset="1" stop-color="#0a1420"/>
+              </linearGradient>
+            </defs>
+            <rect width="360" height="210" fill="url(#g1)"/>
+            <rect x="26" y="30" width="308" height="130" rx="8" fill="#0f2333" stroke="#2a9d8f" stroke-opacity=".5"/>
+            <circle cx="180" cy="95" r="34" fill="none" stroke="#ffb703" stroke-width="3"/>
+            <path d="M170 78l26 17-26 17V78z" fill="#ffb703"/>
+            <rect x="52" y="176" width="86" height="10" rx="5" fill="#2a9d8f" opacity=".55"/>
+            <rect x="150" y="176" width="60" height="10" rx="5" fill="#ffb703" opacity=".5"/>
+            <rect x="222" y="176" width="86" height="10" rx="5" fill="#2a9d8f" opacity=".3"/>
+          </svg>
+        </div>
+        <figcaption>银幕、片单与入口，一个页面理清观影路线</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ENTRIES -->
+  <section id="entries" aria-labelledby="entries-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="sec-tag">入口导航</p>
+        <h2 id="entries-title">三类常用入口，按需求直接进入</h2>
+        <p class="muted">不同的访问目的对应不同入口。先判断你是想看单部影片、按类型浏览，还是跟进近期更新，再选择相应通道，可以减少无效点击。</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2.5" stroke="#e08e00" stroke-width="1.8"/><path d="M10 9.5l5 2.5-5 2.5v-5z" fill="#e08e00"/></svg>
+          </div>
+          <h3>电影观看入口</h3>
+          <p>按剧情、动作、喜剧、悬疑等类型归类的电影页面，适合已经明确想看长片、希望直接播放的访问者。</p>
+          <a class="link-line" href="#playlist">查看电影片单 →</a>
+        </article>
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="13" rx="2" stroke="#e08e00" stroke-width="1.8"/><path d="M8 21h8M12 17v4" stroke="#e08e00" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </div>
+          <h3>剧集追更入口</h3>
+          <p>面向连续剧与短剧的剧集列表，按更新顺序排列，方便持续跟进已开播的剧集内容。</p>
+          <a class="link-line" href="#playlist">查看剧集片单 →</a>
+        </article>
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 3l2.6 5.6 6.1.8-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L3.3 9.4l6.1-.8L12 3z" stroke="#e08e00" stroke-width="1.7" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>热门推荐入口</h3>
+          <p>依据近期浏览与评分整理的推荐位，适合还没有明确目标、想先看看有什么可看的访问者。</p>
+          <a class="link-line" href="#playlist">查看推荐片单 →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLAYLIST -->
+  <section id="playlist" aria-labelledby="playlist-title" style="padding-top:0;">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="sec-tag">片单分类</p>
+        <h2 id="playlist-title">本周片单分类一览</h2>
+        <p class="muted">以下分类用于说明91影院入口的内容组织方式，每类给出适用范围与观看建议，具体片目以站内列表为准。</p>
+      </div>
+      <div class="list-panel">
+        <div class="film-row">
+          <span class="film-no">01</span>
+          <div class="film-body">
+            <h3>高分剧情长片</h3>
+            <p>节奏偏缓、以人物和故事为核心的长片集合，适合安静时段完整观看。</p>
+          </div>
+          <span class="pill">适合整段观看</span>
+        </div>
+        <div class="film-row">
+          <span class="film-no">02</span>
+          <div class="film-body">
+            <h3>动作与悬疑</h3>
+            <p>情节推进较快的类型片，画面与音效信息密集，建议在屏幕较大、网络稳定的环境下播放。</p>
+          </div>
+          <span class="pill">节奏紧凑</span>
+        </div>
+        <div class="film-row">
+          <span class="film-no">03</span>
+          <div class="film-body">
+            <h3>连载剧集</h3>
+            <p>按集更新的连续内容，单集时长通常在四十至五十分钟，适合每天固定时段追看。</p>
+          </div>
+          <span class="pill">持续更新</span>
+        </div>
+        <div class="film-row">
+          <span class="film-no">04</span>
+          <div class="film-body">
+            <h3>短剧与短片</h3>
+            <p>单集十几分钟的内容，通勤或碎片时间也能看完一集，更新频率相对较高。</p>
+          </div>
+          <span class="pill">碎片时间</span>
+        </div>
+        <div class="film-row">
+          <span class="film-no">05</span>
+          <div class="film-body">
+            <h3>纪录与纪实</h3>
+            <p>以真实题材为主的影像内容，适合希望获取知识型观看体验的访问者。</p>
+          </div>
+          <span class="pill">题材真实</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GUIDE + SEARCH -->
+  <section id="guide" aria-labelledby="guide-title" style="padding-top:0;">
+    <div class="wrap split">
+      <div>
+        <div class="sec-head" style="margin-bottom:20px;">
+          <p class="sec-tag">观影须知</p>
+          <h2 id="guide-title">进入91影院入口前的准备</h2>
+          <p class="muted">页面能否顺畅播放，往往取决于网络与设备环境。以下四点是最常被忽略的环节。</p>
+        </div>
+        <ul class="checks">
+          <li><strong>网络带宽</strong>：高清内容对带宽要求较高，建议使用稳定的宽带或 Wi-Fi，避免高峰时段多人同时占用。</li>
+          <li><strong>浏览器版本</strong>：使用较新版本的主流浏览器，能更好地支持页面播放与全屏显示。</li>
+          <li><strong>设备与屏幕</strong>：手机端建议横屏观看；桌面端可调整窗口比例，避免画面被裁切。</li>
+          <li><strong>访问路径</strong>：通过本站提供的91影院入口进入，可减少无效跳转与错误地址带来的困扰。</li>
+        </ul>
+      </div>
+      <div class="panel" id="search">
+        <p class="sec-tag">片名查找</p>
+        <h3>在片单中快速定位</h3>
+        <p class="muted" style="font-size:14.5px;">输入片名或分类关键词，页面会从上方片单中筛出匹配项，帮助你更快找到对应入口。</p>
+        <form class="search-box" id="searchForm" role="search">
+          <label for="searchInput" class="muted" style="position:absolute;left:-9999px;">输入片名或分类关键词</label>
+          <input id="searchInput" type="search" placeholder="例如：悬疑、剧集、短片" autocomplete="off">
+          <button type="submit">查找</button>
+        </form>
+        <p id="searchResult" aria-live="polite">尚未输入关键词。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" aria-labelledby="faq-title" style="padding-top:0;">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="sec-tag">常见问题</p>
+        <h2 id="faq-title">关于91影院入口的常见疑问</h2>
+        <p class="muted">以下问题围绕访问方式与内容范围整理，回答尽量保持简洁，便于快速判断。</p>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>91影院入口需要注册账号吗？</summary>
+          <p>浏览片单与分类不需要账号。页面仅承担内容指引作用，是否注册取决于具体内容页的提示，请以实际页面说明为准。</p>
+        </details>
+        <details>
+          <summary>为什么部分内容显示分类但无法直接播放？</summary>
+          <p>本页为入口与片单页面，不存放视频文件。分类描述用于说明内容组织方式，实际播放能力由对应内容页提供。</p>
+        </details>
+        <details>
+          <summary>手机上访问91影院入口要注意什么？</summary>
+          <p>建议使用稳定的移动网络或 Wi-Fi，并在观看时横置手机。若页面加载缓慢，可先关闭其他占用带宽的应用。</p>
+        </details>
+        <details>
+          <summary>片单多久更新一次？</summary>
+          <p>片单分类随站内内容调整而变动，更新频率不固定。页面中的分类说明描述的是内容类型，不承诺具体片目数量。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOWNLOAD -->
+  <section style="padding-top:0;">
+    <div class="wrap">
+      <div class="download-band">
+        <div>
+          <h2>获取91影院入口桌面快捷方式</h2>
+          <p>将入口页保存到本地，下次访问时无需重新查找地址。下载文件为页面快捷方式，不包含视频内容。</p>
+        </div>
+        <a class="btn btn-primary" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1" style="pointer-events:none;">下载</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <span class="footer-brand">91影院入口</span>
+      <nav class="footer-links" aria-label="页尾导航">
+        <a href="#entries">入口导航</a>
+        <a href="#playlist">热门片单</a>
+        <a href="#guide">观影须知</a>
+        <a href="#search">片名查找</a>
+        <a href="#faq">常见问题</a>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <p>91影院入口为内容指引型首页，汇总观影入口、片单分类与访问说明，不存储、不上传视频文件。页面中的分类描述与观看建议仅用于说明内容组织方式，具体片目与播放情况以对应内容页为准。</p>
+      <p>© 91影院入口 · 保留所有权利</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var form = document.getElementById('searchForm');
+  var input = document.getElementById('searchInput');
+  var out = document.getElementById('searchResult');
+  var rows = Array.prototype.slice.call(document.querySelectorAll('#playlist .film-row'));
+
+  function filter(){
+    var q = input.value.trim().toLowerCase();
+    if(!q){
+      rows.forEach(function(r){ r.style.display=''; });
+      out.textContent = '尚未输入关键词。';
+      return;
+    }
+    var hits = [];
+    rows.forEach(function(r){
+      var text = r.textContent.toLowerCase();
+      var match = text.indexOf(q) !== -1;
+      r.style.display = match ? '' : 'none';
+      if(match){ hits.push(r.querySelector('h3').textContent); }
+    });
+    if(hits.length){
+      out.innerHTML = '找到 <span class="result-hit">' + hits.length + '</span> 个匹配分类：' + hits.join('、') + '。';
+    }else{
+      out.textContent = '没有匹配的分类，试试“剧情”“剧集”“短片”等更短的关键词。';
+    }
+  }
+
+  form.addEventListener('submit', function(e){ e.preventDefault(); filter(); });
+  input.addEventListener('input', filter);
+})();
+</script>
+</body>
+</html>
